@@ -45,7 +45,9 @@
 - I believe the logic can be improved further, its very crude at the moment
 - as the number of stores would grow it would take more time to make the report, we could use multithreading alternatives for faster report generation.
 - better data handling, as we only need data for the last week, we can clean the store_status report and keep only relevant data.
-     
+
+# Video Demonstration
+https://drive.google.com/drive/folders/1u_yKlRHmklzlfMH9BhU0XemlK4VQ3gFE?usp=sharing
 
 
     
