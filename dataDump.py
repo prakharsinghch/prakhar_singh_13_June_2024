@@ -1,19 +1,7 @@
 import psycopg2
 import data_cleaning
 import json
-
-def get_connection():
-    try:
-        return psycopg2.connect(
-            database="loopAI",
-            user="postgres",
-            password="prakhar",
-            host="127.0.0.1",
-            port=5432,
-        )
-    except:
-        return False
-
+import db
 
 def schema_creation(conn, curr):
     curr.execute(""" 
@@ -69,7 +57,7 @@ def data_send(conn,curr,map,table_name):
 
 
 def data_dump(timezones,menu_hours,store_status):
-    conn = get_connection()
+    conn = db.get_connection()
     curr = conn.cursor()
     schema_creation(conn,curr)
     data_send(conn,curr,timezones,table_name="timezones")

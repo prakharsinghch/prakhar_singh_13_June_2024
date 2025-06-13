@@ -1,11 +1,15 @@
 import psycopg2
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 def get_connection():
     try:
         return psycopg2.connect(
-            database="loopAI",
-            user="postgres",
-            password="prakhar",
+            database=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
             host="127.0.0.1",
             port=5432,
         )
